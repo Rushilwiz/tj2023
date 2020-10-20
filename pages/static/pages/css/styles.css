@@ -3,8 +3,11 @@ html {
 }
 
 nav {
-    transform: translateY(-70px);
     z-index: 10;
+}
+
+.animated-navbar {
+    transform: translateY(-70px);
     animation: nav-slide 0.75s ease-in-out forwards;
     animation-delay: 1s;
 }
