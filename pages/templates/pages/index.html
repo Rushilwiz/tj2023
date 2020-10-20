@@ -5,33 +5,29 @@
 {% endblock css %}
 {% block content %}
 <div class="jumbotron jumbotron-fluid">
-  <div class="container home mt-5">
-      <br>
-      <h1 class="display-4"><strong>TJHSST Class of 2023</strong></h1>
+  <div class="container hero-text">
+    <h1 class="display-4"><strong>TJHSST Class of 2023</strong></h1>
     <p class="lead">We are the class to beat!</p>
-      <br>
   </div>
 </div>
-<div class="container-2">
-    <h1><center><strong>2023 News</strong></center></h1>
-    <br>
+<div class="container news">
+    <h1 class="text-center font-weight-bold">2023 News</h1>
     <div class="row">
-
         {% for story in stories %}
-
-        <div class="col segment">
-            <h1 class="segment-title">{{ story.header }}</h1>
-            <!-- <div class="segment-image" style="background:url('/static/pages/css/img/{{ story.img_name }}') 50% 50% no-repeat;"> -->
-            <div class="img_cont">
-                <img class="segment-image" src="/static/pages/css/img/{{ story.img_name }}">
-            </div>
+        {% comment %} <div class="col-4 news-col">
+            <h3 class="">{{ story.header }}</h3>
+            <img class="news-image" src="/static/pages/css/img/{{ story.img_name }}">
             <p class="segment-para">{{ story.body }}</p>
             {{ story.created.date }}
-        </div>
-
+        </div> {% endcomment %}
+            <div class="col-md-4 news-col card">
+              <img class="card-img-top" src="{% static 'pages/css/img' %}/{{ story.img_name }}" alt="{{ story.header }} Image">
+              <div class="card-body">
+                <h3 class="card-title">{{ story.header }}</h3>
+                <p class="card-text">{{ story.body }}</p>
+              </div>
+            </div>
         {% endfor %}
-
     </div>
-
 </div>
 {% endblock content %}
