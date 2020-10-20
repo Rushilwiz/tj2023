@@ -1,9 +1,15 @@
 from django.shortcuts import render
+from .models import Story
 
 
 # Create your views here.
 def index(request):
-    return render(request, 'pages/index.html')
+    try:
+        stories = Story.objects.all().order_by('-created')
+        stories = stories[:3]
+    except Exception:
+        stories = []
+    return render(request, 'pages/index.html', {'stories': stories})
 
 
 def council(request):

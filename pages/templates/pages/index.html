@@ -5,9 +5,33 @@
 {% endblock css %}
 {% block content %}
 <div class="jumbotron jumbotron-fluid">
-  <div class="container">
-    <h1 class="display-4">TJHSST Class of 2023</h1>
+  <div class="container home">
+      <br>
+      <h1 class="display-4"><strong>TJHSST Class of 2023</strong></h1>
     <p class="lead">We are the class to beat!</p>
+      <br>
   </div>
+</div>
+<div class="container-2">
+    <h1><center><strong>2023 News</strong></center></h1>
+    <br>
+    <div class="row">
+
+        {% for story in stories %}
+
+        <div class="col segment">
+            <h1 class="segment-title">{{ story.header }}</h1>
+            <!-- <div class="segment-image" style="background:url('/static/pages/css/img/{{ story.img_name }}') 50% 50% no-repeat;"> -->
+            <div class="img_cont">
+                <img class="segment-image" src="/static/pages/css/img/{{ story.img_name }}">
+            </div>
+            <p class="segment-para">{{ story.body }}</p>
+            {{ story.created.date }}
+        </div>
+
+        {% endfor %}
+
+    </div>
+
 </div>
 {% endblock content %}
