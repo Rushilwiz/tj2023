@@ -4,7 +4,7 @@ from django.conf import settings
 
 
 # Create your views here.
-def test(request):
+def meeting_overview(request):
     html = ''
 
     page = NotionPage.objects.get(url=settings.NOTION_URL).page
@@ -17,9 +17,7 @@ def test(request):
 
     for meeting in meeting_block.get_rows():
         html += f'<h4><a href="/notes/meeting/{meeting.id}">{meeting.title}</a></h4>'
-
-    html += '<hr>'
-    return render(request, 'notes/test.html', {'html': html})
+    return render(request, 'notes/notes.html', {'html': html})
 
 
 def has_children(block):
