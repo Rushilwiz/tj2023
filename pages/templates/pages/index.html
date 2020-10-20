@@ -1,4 +1,8 @@
 {% extends 'pages/base.html' %}
+{% load static %}
+{% block css %}
+    <link rel="stylesheet" href="{% static 'pages/css/styles.css' %}">
+{% endblock css %}
 {% block content %}
 <div class="jumbotron jumbotron-fluid">
   <div class="container">
