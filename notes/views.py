@@ -19,7 +19,7 @@ def test(request):
         html += f'<h4><a href="/notes/meeting/{meeting.id}">{meeting.title}</a></h4>'
 
     html += '<hr>'
-    return render(request, 'test.html', {'html': html})
+    return render(request, 'notes/test.html', {'html': html})
 
 
 def has_children(block):
@@ -78,4 +78,4 @@ def show_meeting(request, meeting_id):
     html = getHtml(html_dict, meeting_dict, meeting)
     print(html)
 
-    return render(request, "meeting.html", {'html': html})
+    return render(request, "notes/meeting.html", {'html': html})
