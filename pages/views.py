@@ -9,7 +9,7 @@ def index(request):
         stories = stories[:3]
     except Exception:
         stories = []
-    return render(request, 'pages/index.html', {'stories': stories})
+    return render(request, 'pages/index.html', {'stories': stories, 'animate' : True})
 
 
 def council(request):
