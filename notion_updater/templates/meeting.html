@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/meeting.css' %}">
+{% endblock css %}
+{% block body %}
+{{ html|safe }}
+{% endblock body %}
