@@ -1,0 +1,19 @@
+{% extends 'pages/base.html' %}
+{% load static %}
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'pages/css/styles.css' %}">
+{% endblock css %}
+{% block content %}
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+    <h1 class="display-4">The Class Council</h1>
+    <p class="lead">We are here to serve you.</p>
+    </div>
+</div>
+<div class="council container">
+    <h3 class="display-6">About us</h3>
+    <p>Some description of what we do</p>
+    <h6>Our Team</h6>
+    <p>pics, description, role, and quote, of every class council member</p>
+</div>
+{% endblock content %}

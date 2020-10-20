@@ -1,4 +1,10 @@
 {% extends 'pages/base.html' %}
+{% load static %}
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'pages/css/styles.css' %}">
+{% endblock css %}
 {% block content %}
-{{html|safe}}
+<div class="container">
+    {{html|safe}}
+</div>
 {% endblock content %}
