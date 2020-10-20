@@ -1,3 +1,30 @@
+html {
+    overflow-x: hidden;
+}
+
+nav {
+    transform: translateY(-70px);
+    z-index: 10;
+    animation: nav-slide 0.75s ease-in-out forwards;
+    animation-delay: 1s;
+}
+
+@keyframes nav-slide {
+    0% {
+         transform: translateY(-70px);
+    }
+
+    100% {
+         transform: translateY(0px);
+    }
+}
+
+
 .jumbotron {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
     background-image: url('img/hero.png')
 }
