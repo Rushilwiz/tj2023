@@ -18,5 +18,6 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('notes/', include('notion_updater.urls'))
+    path('notes/', include('notion_updater.urls')),
+    path('', include('pages.urls'))
 ]
