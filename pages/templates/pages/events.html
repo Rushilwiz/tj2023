@@ -1,14 +1,13 @@
 {% extends 'pages/base.html' %}
 {% load static %}
+{% block title %}Events{% endblock title %}
 {% block css %}
     <link rel="stylesheet" type="text/css" href="{% static 'pages/css/styles.css' %}">
 {% endblock css %}
 {% block content %}
-<div class="jumbotron jumbotron-fluid">
-    <div class="container mt-5">
-    <h1 class="display-4">Events</h1>
-    <p class="lead">Come and join your friends!</p>
-    </div>
+<div class="container mt-5">
+<h1 class="display-4">Events</h1>
+<p class="lead">Come and join your friends!</p>
 </div>
 <div class="container">
     <iframe src="https://calendar.google.com/calendar/embed?src=tjhsst2023%40gmail.com&ctz=America%2FNew_York" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>

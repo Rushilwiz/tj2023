@@ -14,9 +14,25 @@ def meeting_overview(request):
         if block.id == '383b2866-a0ae-4f4e-b246-4131117721c0':
             meeting_block = block.collection
             break
-
+    sort_dict = {}
     for meeting in meeting_block.get_rows():
-        html += f'<h4><a href="/notes/meeting/{meeting.id}">{meeting.title}</a></h4>'
+        month = meeting.title.split(' ')[0].lower()
+        if month in sort_dict:
+            sort_dict[month].append(meeting)
+        else:
+            sort_dict[month] = [meeting]
+        # html = f'<h4 class="meeting"><a href="/notes/meeting/{meeting.id}">{meeting.title}</a></h4>' + html
+
+    for month in sort_dict.keys():
+        string = '<div class="wrapper">{}{}</div>'
+        button = f'<div class="button" id="button_{month}" onclick="dropdown(this, \'{month}\');"><p>{month}</p></div>'
+        tmp = '</ul></div>'
+        for meeting in sort_dict[month]:
+            tmp = f'<li class="meeting_{month}"><a href="/notes/meeting/{meeting.id}">{meeting.title}</a></li>' + tmp
+
+        tmp = f'<div class="dropdown1" id="dropdown_{month}"><ul class="content" id="content_{month}">' + tmp + '<br><br>'
+        html = string.format(button, tmp) + html
+
     return render(request, 'notes/notes.html', {'html': html})
 
 
@@ -56,7 +72,8 @@ def show_meeting(request, meeting_id):
                     break
 
     meeting_dict = dict()
-    html_dict = {meeting: '<h2>' + meeting.title.strip() + '</h2><ul>{}</ul>'}
+    title = meeting.title.strip()
+    html_dict = {meeting: '<ul>{}</ul>'}
 
     q = [meeting]
 
@@ -76,4 +93,4 @@ def show_meeting(request, meeting_id):
     html = getHtml(html_dict, meeting_dict, meeting)
     print(html)
 
-    return render(request, "notes/meeting.html", {'html': html})
+    return render(request, "notes/meeting.html", {'html': html, 'title': title})

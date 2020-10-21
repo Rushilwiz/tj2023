@@ -1,10 +1,20 @@
 {% extends 'pages/base.html' %}
 {% load static %}
+{% block title %}Meetings{% endblock title %}
 {% block css %}
-    <link rel="stylesheet" type="text/css" href="{% static 'pages/css/styles.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'pages/css/styles.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'notes/css/notes.css' %}">
 {% endblock css %}
 {% block content %}
 <div class="container mt-5">
-    {{html|safe}}
+<h1 class="display-4">Our Class Council Meetings</h1>
+<p class="lead">Select one to see our meeting notes - It may take a bit as it is fetching data</p>
 </div>
+<hr>
+<div class="container mt-5">
+    <center>
+    {{html|safe}}
+    </center>
+</div>
+<script src="{% static 'notes/js/notes.js' %}"></script>
 {% endblock content %}
