@@ -18,7 +18,7 @@ def index(request):
         'bar': bar
     }
 
-    return render(request, 'pages/index.html')
+    return render(request, 'pages/index.html', context)
 
 
 def council(request):
