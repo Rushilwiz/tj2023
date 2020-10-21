@@ -8,6 +8,26 @@ html {
   overflow-x: hidden;
 }
 
+.person_cont {
+    text-align: center;
+    margin: 20px;
+}
+
+.photo {
+    width: 300px;
+    margin: 15px;
+    border-radius: 10px;
+    box-shadow: 12px 12px rgb(0, 0, 0, 0.1), -12px -12px rgb(0, 0, 0, 0.3);
+}
+
+.council h2{
+    text-align: center;
+}
+
+.details p a {
+    font-size: 25px;
+}
+
 .border-sides {
     border: 0px !important;
     border-left: 1px solid gray !important;
