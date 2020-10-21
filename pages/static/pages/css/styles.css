@@ -36,7 +36,9 @@ nav {
   left: 0;
   width: 100vw;
   color: white;
-  background-image: url('img/hero.png')
+  background-image: url('img/hero.png');
+  background-repeat: no-repeat;
+  background-position: left bottom;
 }
 
 .hero-text {
@@ -113,6 +115,10 @@ body {
     margin-bottom: 10px;
 }
 
+.news {
+    margin-bottom: 150px;
+}
+
 .segment-quote {
   color: #444;
   text-align: left;
@@ -158,4 +164,10 @@ body {
 
 .hero-text {
     margin-top: 30vh;
+    text-weight: bold;
+    color: white;
+}
+.contrast {
+    mix-blend-mode: exclusion;
+    color: white;
 }
