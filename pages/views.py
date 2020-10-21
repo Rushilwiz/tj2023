@@ -19,3 +19,6 @@ def council(request):
 
 def events(request):
     return render(request, 'pages/events.html')
+
+def contact(request):
+    return render (request, 'pages/contact.html')
