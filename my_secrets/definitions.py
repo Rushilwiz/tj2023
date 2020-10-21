@@ -7,6 +7,7 @@
 
 SECRET_KEYS = [
     # start with your Django secret key like this:
+    'DEBUG',
     "SECRET_KEY",
     "NOTION_URL",
     "NOTION_COOKIE",
