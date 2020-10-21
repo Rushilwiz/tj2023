@@ -1,0 +1,84 @@
+.wrapper {
+    margin: 0 auto;
+    width: 100%;
+    font-family:'Open Sans', sans-serif;
+    backface-visibility: hidden;
+}
+
+.button {
+    text-transform: uppercase;
+    position: relative;
+    top: 4px;
+    left: 0;
+    width: 75%;
+    height: 100px;
+    margin: 0;
+    padding: 0 5px 0 5px;
+    border-radius: 3px;
+    border: 1px solid #393939;
+    background-color: #3a9fbf;
+    cursor: pointer;
+    transition: all 1s;
+}
+
+.button:hover {
+    background: #00008B;
+}
+
+.button p {
+    text-align: center;
+    line-height: 100px;
+    font-size: 35px;
+    font-weight: 200;
+    letter-spacing: 2px;
+    color: #FFF;
+    transition: all 1s;
+}
+
+.button p:hover {
+    font-size: 40px;
+}
+
+.dropdown1 {
+    position: relative;
+    top: 0px;
+    left: 0;
+    width: 75%;
+    height: 0;
+    margin: 0;
+    padding: 0 5px 0 5px;
+    border-radius: 0 0 5px 5px;
+    background: #393939;
+    transition: 0.5s;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.content {
+    list-style: none;
+    margin: 0;
+    padding: 15px 15px 0 15px;
+    opacity: 0;
+}
+
+.content li {
+    margin: 0 0 5px 0;
+    padding: 0 0 5px 0;
+    width: 100%;
+    border-bottom: 1px solid #676768;
+    text-align: center;
+}
+
+.content li a {
+    text-decoration: none;
+    margin: 0 0 5px 0;
+    padding: 0;
+    font-size: 23px;
+    font-weight: 100;
+    letter-spacing: 5px;
+    color: #fff;
+}
+
+.content li a:hover {
+    color: #cecccf;
+}
