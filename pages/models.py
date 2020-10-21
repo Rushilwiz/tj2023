@@ -7,3 +7,8 @@ class Story(models.Model):
     img_name = models.CharField(max_length=50, default=None, null=True)
     body = models.TextField(max_length=200)
     created = models.DateTimeField(auto_now=True)
+
+
+class Bar(models.Model):
+    name = models.CharField(max_length=50)
+    money_raised = models.FloatField()

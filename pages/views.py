@@ -1,16 +1,18 @@
 from django.shortcuts import render
-from .models import Story
+from .models import Story, Bar
 
 
 # Create your views here.
 def index(request):
     try:
         stories = Story.objects.all().order_by('-created')
+        bar = Bar.objects.all()[0]
         stories = stories[:3]
     except Exception:
         stories = []
+        bar = None
 
-    return render(request, 'pages/index.html', {'stories': stories, 'animate': True})
+    return render(request, 'pages/index.html', {'stories': stories, 'animate': True, 'bar': bar})
 
 
 def council(request):
