@@ -15,12 +15,6 @@
     <h1 class="text-center font-weight-bold">2023 News</h1>
     <div class="row">
         {% for story in stories %}
-        {% comment %} <div class="col-4 news-col">
-            <h3 class="">{{ story.header }}</h3>
-            <img class="news-image" src="/static/pages/css/img/{{ story.img_name }}">
-            <p class="segment-para">{{ story.body }}</p>
-            {{ story.created.date }}
-        </div> {% endcomment %}
             <div class="col-md-4 news-col card">
               <img class="card-img-top" src="{% static 'pages/css/img' %}/{{ story.img_name }}" alt="{{ story.header }} Image">
               <div class="card-body">
