@@ -6,22 +6,17 @@
 {% endblock css %}
 {% block content %}
 <div class="jumbotron jumbotron-fluid">
-  <div class="container hero-text">
+  <div class="container hero-text contrast">
     <h1 class="display-4"><strong>TJHSST Class of 2023</strong></h1>
     <p class="lead">We are the class to beat!</p>
   </div>
 </div>
 <div class="container news">
     <h1 class="text-center font-weight-bold">2023 News</h1>
+    <br><br>
     <div class="row">
         {% for story in stories %}
-        {% comment %} <div class="col-4 news-col">
-            <h3 class="">{{ story.header }}</h3>
-            <img class="news-image" src="/static/pages/css/img/{{ story.img_name }}">
-            <p class="segment-para">{{ story.body }}</p>
-            {{ story.created.date }}
-        </div> {% endcomment %}
-            <div class="col-md-4 news-col card">
+            <div class="border-sides col-md-4 news-col card">
               <img class="card-img-top" src="{% static 'pages/css/img' %}/{{ story.img_name }}" alt="{{ story.header }} Image">
               <div class="card-body">
                 <h3 class="card-title">{{ story.header }}</h3>
