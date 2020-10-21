@@ -92,6 +92,23 @@ body {
   color: #444;
 }
 
+#progress {
+  width: 100%;
+  background-color: #eee;
+  border-radius: 50px;
+}
+
+#bar {
+  width: 1%;
+  height: 50px;
+  background-color: #0000ff ;
+  text-align: center;
+  line-height: 50px;
+  color: white;
+  border-radius: 50px;
+  transition: all 1s;
+}
+
 /* mobile styles */
 
 @media (max-width: 768px) {

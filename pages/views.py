@@ -12,7 +12,13 @@ def index(request):
         stories = []
         bar = None
 
-    return render(request, 'pages/index.html', {'stories': stories, 'animate': True, 'bar': bar})
+    context = {
+        'stories': stories,
+        'animate': True,
+        'bar': bar
+    }
+
+    return render(request, 'pages/index.html')
 
 
 def council(request):
