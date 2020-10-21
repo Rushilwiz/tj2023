@@ -13,5 +13,5 @@ class Story(models.Model):
 
 
 class Bar(models.Model):
-    name = models.CharField(max_length=50)
-    money_raised = models.FloatField()\
+    name = models.CharField(max_length=70)
+    money_raised = models.FloatField()

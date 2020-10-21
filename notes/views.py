@@ -2,6 +2,8 @@ from django.shortcuts import render
 from .models import NotionPage
 from django.conf import settings
 
+import time
+
 
 # Create your views here.
 def meeting_overview(request):
@@ -61,6 +63,8 @@ def getHtml(html_dict, meeting_dict, node):
 
 def show_meeting(request, meeting_id):
 
+    now = time.time()
+
     page = NotionPage.objects.get(url=settings.NOTION_URL).page
 
     meeting = None
@@ -77,7 +81,10 @@ def show_meeting(request, meeting_id):
 
     q = [meeting]
 
-    while q and has_children(temp := q.pop(0)):
+    index = 0
+
+    while q and index < len(q) and has_children(temp := q[index]):
+        index += 1
         for children in temp.children:
 
             if children.parent in meeting_dict.keys():
@@ -91,6 +98,4 @@ def show_meeting(request, meeting_id):
             html_dict[children] = "<li class='" + block_type + "'>" + children.title.strip() + "<ul>{}</ul></li>"
 
     html = getHtml(html_dict, meeting_dict, meeting)
-    print(html)
-
     return render(request, "notes/meeting.html", {'html': html, 'title': title})
