@@ -1,5 +1,4 @@
 from django.shortcuts import render
-from .models import NotionPage
 from django.conf import settings
 from notion.client import NotionClient
 
