@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .models import NotionPage
 from django.conf import settings
+from notion.client import NotionClient
 
 import time
 
@@ -9,7 +10,8 @@ import time
 def meeting_overview(request):
     html = ''
 
-    page = NotionPage.objects.get(url=settings.NOTION_URL).page
+    client = NotionClient(token_v2=settings.NOTION_COOKIE)
+    page = client.get_block(settings.NOTION_URL)
 
     meeting_block = None
     for block in page.children:
@@ -65,7 +67,8 @@ def show_meeting(request, meeting_id):
 
     now = time.time()
 
-    page = NotionPage.objects.get(url=settings.NOTION_URL).page
+    client = NotionClient(token_v2=settings.NOTION_COOKIE)
+    page = client.get_block(settings.NOTION_URL)
 
     meeting = None
     for block in page.children:
