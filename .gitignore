@@ -7,7 +7,6 @@ static_files
 .idea/
 .vscode/
 /static
-migrations/
 
 # C extensions
 *.so
