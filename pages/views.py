@@ -4,21 +4,17 @@ from .models import Story, Bar
 
 # Create your views here.
 def index(request):
-    try:
-        stories = Story.objects.all().order_by('-created')
-        bar = Bar.objects.all()[0]
-        stories = stories[:3]
-    except Exception:
-        stories = []
-        bar = None
+    stories = Story.objects.all().order_by('-created')[:3]
+    bar = Bar.objects.all()[:1]
 
     context = {
         'stories': stories,
         'animate': True,
-        'bar': bar
+        'bars': bar
     }
+    print(stories)
 
-    return render(request, 'pages/index.html', context)
+    return render(request, 'pages/index.html', context=context)
 
 
 def council(request):
