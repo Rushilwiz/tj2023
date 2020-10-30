@@ -36,7 +36,7 @@
       </div>
       <script>
       document.addEventListener("DOMContentLoaded", function(){
-        var thing = ({{ bar.money_raised }})/50000;
+        var thing = ({{ bar.money_raised }})/10000;
         thing = thing * 100;
         console.log(thing);
         width = 1;
@@ -45,10 +45,10 @@
             if (width < thing) {
                 width+=.25;
                 document.getElementById('bar').style.width = width + "%";
-                document.getElementById('bar').innerHTML = "$" + (width * 500)
+                document.getElementById('bar').innerHTML = "$" + (width * 100)
             } else {
                 document.getElementById('bar').style.width = thing + "%";
-                document.getElementById('bar').innerHTML = "$" + (thing * 500)
+                document.getElementById('bar').innerHTML = "$" + (thing * 100)
                 clearInterval(id);
             }
         }
